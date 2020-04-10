@@ -8,7 +8,7 @@ function renderBoard() {
   let ScHeight = window.innerHeight;
   let styleSh = document.styleSheets;
   let rowLength = 4;
-  let sideBarWidth = '';
+  let sideBarWidth = "";
   if (ScWidth >= 1020) {
     sideBarWidth = `${(ScWidth * 0.1) / 2 + (ScWidth * 0.9) / 4.05}px`;
     rowLength = 4;
@@ -66,6 +66,7 @@ function renderBoard() {
       let FrontBase = document.createElement("div");
       let FlipBack = document.createElement("div");
       let FlipBackBase = document.createElement("div");
+      Flip.id = `${j}-${i}`;
       FlipBack.appendChild(FlipBackBase);
       FlipFront.appendChild(FrontBase);
       FlipInner.appendChild(FlipFront);
@@ -82,9 +83,22 @@ function renderBoard() {
   }
   const sideBar = document.createElement("div");
   const burgerBtn = document.createElement("button");
-  const radioBtn = document.createElement("button");
   const buttonRow = document.createElement("div");
   const burgerStripesColumn = document.createElement("div");
+  const switchBtn = document.createElement("label");
+  const checkbox = document.createElement("input");
+  const sliderBtn = document.createElement("div");
+  const switchBtnWr = document.createElement("div");
+  const sliderRow = document.createElement("div");
+  const playStateBtn = document.createElement("div");
+  const trainStateBtn = document.createElement("div");
+  const sideBarMenu = document.createElement("div");
+  const boxesContainer = document.createElement('dic');
+  checkbox.setAttribute("type", "checkbox");
+
+  playStateBtn.innerText = "play";
+  trainStateBtn.innerText = "train";
+
   let stripes = [];
   for (let i = 0; i < 3; i += 1) {
     const stripe = document.createElement("div");
@@ -96,33 +110,70 @@ function renderBoard() {
     if (sideBarOpen) {
       sideBar.style.width = 0;
       sideBarOpen = false;
+      sideBarMenu.classList.add('hidden');
+      burgerBtn.classList.toggle("turn");
     } else {
       sideBar.style.width = sideBarWidth;
       sideBarOpen = true;
+      sideBarMenu.classList.remove('hidden');
+      burgerBtn.classList.toggle("turn");
     }
-        //sideBar.classList.toggle("hidden");
-    burgerBtn.classList.toggle('turn');
   };
+  main.onmouseup = function(e) {
+    if (sideBarOpen && (sideBar.clientWidth === +sideBarWidth.match(/(\d)*(?=\.)/)[0])) {
+      sideBar.style.width = 0;
+      sideBarOpen = false;
+      sideBarMenu.classList.add('hidden');
+      burgerBtn.classList.toggle("turn");
+    }
+  };
+  switchBtn.onmouseup = function() {
+    playStateBtn.classList.toggle("hidden");
+    trainStateBtn.classList.toggle("hidden");
+    sideBar.classList.toggle("play-side-bar");
+  };
+  switchBtnWr.classList.add("switch-wrapper");
+  playStateBtn.classList.add("slider-button-caption");
+  trainStateBtn.classList.add("slider-button-caption");
+  sliderRow.classList.add("slider-row");
+  playStateBtn.classList.add("hidden");
+  switchBtn.classList.add("switch");
+  sliderBtn.classList.add("slider");
   burgerStripesColumn.classList.add("burger-stripes");
   burgerBtn.classList.add("burger-button");
   sideBar.classList.add("side-bar");
-  //sideBar.classList.add("hidden");
   buttonRow.classList.add("row");
   buttonRow.classList.add("button-row");
-  // sideBar.id = 'side-bar';
-  burgerBtn.appendChild(burgerStripesColumn);
+  sideBarMenu.classList.add('hidden');
+  sideBarMenu.classList.add('side-bar-menu');
+  switchBtnWr.appendChild(switchBtn);
+  sliderRow.appendChild(playStateBtn);
+  sliderRow.appendChild(trainStateBtn);
+  sliderBtn.appendChild(sliderRow);
+  sideBar.appendChild(sideBarMenu);
+  switchBtn.appendChild(checkbox);
+  switchBtn.appendChild(sliderBtn);
   buttonRow.appendChild(burgerBtn);
-  buttonRow.appendChild(radioBtn);
+  buttonRow.appendChild(switchBtnWr);
+  burgerBtn.appendChild(burgerStripesColumn);
   main.appendChild(sideBar);
   main.appendChild(buttonRow);
+  main.appendChild(boxesContainer);
+  boxes.forEach((a) => {
+    a.forEach((b) => {
+      const menuItem = document.createElement("div");
+      menuItem.classList.add("burger-menu-item");
+      menuItem.innerText = b.id;
+      sideBarMenu.appendChild(menuItem);
+    });
+  });
   stripes.forEach((a) => {
     burgerStripesColumn.appendChild(a);
   });
   boxes.forEach((a) => {
-    console.log("1");
     const row = document.createElement("div");
     row.classList.add("row");
-    main.appendChild(row);
+    boxesContainer.appendChild(row);
     a.forEach((b) => row.appendChild(b));
   });
 }
