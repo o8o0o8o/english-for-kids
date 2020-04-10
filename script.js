@@ -4,25 +4,31 @@ const main = document.getElementById("main");
 main.onload = renderBoard();
 
 function renderBoard() {
-  let ScWidth = window.screen.width;
-  let ScHeight = window.screen.height;
+  let ScWidth = window.innerWidth;
+  let ScHeight = window.innerHeight;
   let styleSh = document.styleSheets;
   let rowLength = 4;
+  let sideBarWidth = '';
   if (ScWidth >= 1020) {
+    sideBarWidth = `${(ScWidth * 0.1) / 2 + (ScWidth * 0.9) / 4.05}px`;
     rowLength = 4;
     styleSh[0].insertRule(
-      `.row { width: ${ScWidth * 0.9}px;
+      `.row { width: ${ScWidth * 0.86}px;
               height: ${ScHeight / 3}px;}`,
       styleSh[0].rules.length
     );
     styleSh[0].insertRule(
-      `.front { width: ${(ScWidth * 0.9) / 4.05}px;
+      `.front { width: ${(ScWidth * 0.86) / 4.05}px;
               height: ${(ScHeight / 3) * 0.98}px;}`,
       styleSh[0].rules.length
     );
     styleSh[0].insertRule(
-      `.side-bar { width: ${((ScWidth * 0.1) / 2) + (ScWidth * 0.9) / 4.05}px;
+      `.side-bar {
               height: ${ScHeight}px;}`,
+      styleSh[0].rules.length
+    );
+    styleSh[0].insertRule(
+      `.button-row {height: ${(ScHeight / 10) * 0.98}px;}`,
       styleSh[0].rules.length
     );
   } else if (ScWidth < 1020 && ScWidth >= 600) {
@@ -77,14 +83,41 @@ function renderBoard() {
   const sideBar = document.createElement("div");
   const burgerBtn = document.createElement("button");
   const radioBtn = document.createElement("button");
-  const row1 = document.createElement("div");
+  const buttonRow = document.createElement("div");
+  const burgerStripesColumn = document.createElement("div");
+  let stripes = [];
+  for (let i = 0; i < 3; i += 1) {
+    const stripe = document.createElement("div");
+    stripe.classList.add("burger-stripe");
+    stripes.push(stripe);
+  }
+  let sideBarOpen = false;
+  burgerBtn.onmousedown = function () {
+    if (sideBarOpen) {
+      sideBar.style.width = 0;
+      sideBarOpen = false;
+    } else {
+      sideBar.style.width = sideBarWidth;
+      sideBarOpen = true;
+    }
+        //sideBar.classList.toggle("hidden");
+    burgerBtn.classList.toggle('turn');
+  };
+  burgerStripesColumn.classList.add("burger-stripes");
+  burgerBtn.classList.add("burger-button");
   sideBar.classList.add("side-bar");
-  row1.classList.add("row");
-  row1.appendChild(burgerBtn);
-  row1.appendChild(radioBtn);
+  //sideBar.classList.add("hidden");
+  buttonRow.classList.add("row");
+  buttonRow.classList.add("button-row");
+  // sideBar.id = 'side-bar';
+  burgerBtn.appendChild(burgerStripesColumn);
+  buttonRow.appendChild(burgerBtn);
+  buttonRow.appendChild(radioBtn);
   main.appendChild(sideBar);
-  main.appendChild(row1);
-  console.log(boxes);
+  main.appendChild(buttonRow);
+  stripes.forEach((a) => {
+    burgerStripesColumn.appendChild(a);
+  });
   boxes.forEach((a) => {
     console.log("1");
     const row = document.createElement("div");
