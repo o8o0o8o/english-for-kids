@@ -2,6 +2,8 @@ const cards = [
   [
     "Action (set A)",
     "Action (set B)",
+    "Action (set C)",
+    "Adjective",
     "Animal (set A)",
     "Animal (set B)",
     "Clothes",
@@ -107,6 +109,106 @@ const cards = [
       audioSrc: "audio/swim.mp3",
     },
   ],
+  [
+    {
+      word: "argue",
+      translation: "спорить",
+      image: "img/argue.jpg",
+      audioSrc: "audio/argue.mp3",
+    },
+    {
+      word: "build",
+      translation: "строить",
+      image: "img/build.jpg",
+      audioSrc: "audio/build.mp3",
+    },
+    {
+      word: "carry",
+      translation: "нести",
+      image: "img/carry.jpg",
+      audioSrc: "audio/carry.mp3",
+    },
+    {
+      word: "catch",
+      translation: "ловить",
+      image: "img/catch.jpg",
+      audioSrc: "audio/catch.mp3",
+    },
+    {
+      word: "drive",
+      translation: "водить",
+      image: "img/drive.jpg",
+      audioSrc: "audio/drive.mp3",
+    },
+    {
+      word: "drop",
+      translation: "падать",
+      image: "img/drop.jpg",
+      audioSrc: "audio/drop.mp3",
+    },
+    {
+      word: "pull",
+      translation: "тянуть",
+      image: "img/pull.jpg",
+      audioSrc: "audio/pull.mp3",
+    },
+    {
+      word: "push",
+      translation: "толкать",
+      image: "img/push.jpg",
+      audioSrc: "audio/push.mp3",
+    },
+  ],
+  [
+    {
+      word: "big",
+      translation: "большой",
+      image: "img/big.jpg",
+      audioSrc: "audio/big.mp3",
+    },
+    {
+      word: "small",
+      translation: "маленький",
+      image: "img/small.jpg",
+      audioSrc: "audio/small.mp3",
+    },
+    {
+      word: "fast",
+      translation: "быстрый",
+      image: "img/fast.jpg",
+      audioSrc: "audio/fast.mp3",
+    },
+    {
+      word: "slow",
+      translation: "медленный",
+      image: "img/slow.jpg",
+      audioSrc: "audio/slow.mp3",
+    },
+    {
+      word: "friendly",
+      translation: "дружелюбный",
+      image: "img/friendly.jpg",
+      audioSrc: "audio/friendly.mp3",
+    },
+    {
+      word: "unfriendly",
+      translation: "недружелюбный",
+      image: "img/unfriendly.jpg",
+      audioSrc: "audio/unfriendly.mp3",
+    },
+    {
+      word: "young",
+      translation: "молодой",
+      image: "img/young.jpg",
+      audioSrc: "audio/young.mp3",
+    },
+    {
+      word: "old",
+      translation: "старый",
+      image: "img/old.jpg",
+      audioSrc: "audio/old.mp3",
+    },
+  ],  
   [
     {
       word: "cat",
@@ -306,108 +408,7 @@ const cards = [
       image: "img/laugh.jpg",
       audioSrc: "audio/laugh.mp3",
     },
-  ],
-  ////////////////////////////////////////////////////
-  [
-    {
-      word: "skirt",
-      translation: "юбка",
-      image: "img/skirt.jpg",
-      audioSrc: "audio/skirt.mp3",
-    },
-    {
-      word: "pants",
-      translation: "брюки",
-      image: "img/pants.jpg",
-      audioSrc: "audio/pants.mp3",
-    },
-    {
-      word: "blouse",
-      translation: "блузка",
-      image: "img/blouse.jpg",
-      audioSrc: "audio/blouse.mp3",
-    },
-    {
-      word: "dress",
-      translation: "платье",
-      image: "img/dress.jpg",
-      audioSrc: "audio/dress.mp3",
-    },
-    {
-      word: "boot",
-      translation: "ботинок",
-      image: "img/boot.jpg",
-      audioSrc: "audio/boot.mp3",
-    },
-    {
-      word: "shirt",
-      translation: "рубашка",
-      image: "img/shirt.jpg",
-      audioSrc: "audio/shirt.mp3",
-    },
-    {
-      word: "coat",
-      translation: "пальто",
-      image: "img/coat.jpg",
-      audioSrc: "audio/coat.mp3",
-    },
-    {
-      word: "shoe",
-      translation: "туфли",
-      image: "img/shoe.jpg",
-      audioSrc: "audio/shoe.mp3",
-    },
-  ],
-  [
-    {
-      word: "sad",
-      translation: "грустный",
-      image: "img/sad.jpg",
-      audioSrc: "audio/sad.mp3",
-    },
-    {
-      word: "angry",
-      translation: "сердитый",
-      image: "img/angry.jpg",
-      audioSrc: "audio/angry.mp3",
-    },
-    {
-      word: "happy",
-      translation: "счастливый",
-      image: "img/happy.jpg",
-      audioSrc: "audio/happy.mp3",
-    },
-    {
-      word: "tired",
-      translation: "уставший",
-      image: "img/tired.jpg",
-      audioSrc: "audio/tired.mp3",
-    },
-    {
-      word: "surprised",
-      translation: "удивлённый",
-      image: "img/surprised.jpg",
-      audioSrc: "audio/surprised.mp3",
-    },
-    {
-      word: "scared",
-      translation: "испуганный",
-      image: "img/scared.jpg",
-      audioSrc: "audio/scared.mp3",
-    },
-    {
-      word: "smile",
-      translation: "улыбка",
-      image: "img/smile.jpg",
-      audioSrc: "audio/smile.mp3",
-    },
-    {
-      word: "laugh",
-      translation: "смех",
-      image: "img/laugh.jpg",
-      audioSrc: "audio/laugh.mp3",
-    },
-  ],
+  ],  
 ];
 
 let sergeantState = (function () {
@@ -461,24 +462,24 @@ function drawCaptain() {
       ImageCircle.appendChild(img);
       stripeSet.appendChild(stripe1);
       CardSuit.appendChild(ImageCircle);
-      CardContainer.classList.add(`${cardIndex}`); 
-      CardSuit.classList.add(`${cardIndex}`); 
-      stripeSet.classList.add(`${cardIndex}`); 
-      ImageCircle.classList.add(`${cardIndex}`);   
-      img.classList.add(`${cardIndex}`);     
+      CardContainer.classList.add(`${cardIndex}`);
+      CardSuit.classList.add(`${cardIndex}`);
+      stripeSet.classList.add(`${cardIndex}`);
+      ImageCircle.classList.add(`${cardIndex}`);
+      img.classList.add(`${cardIndex}`);
       stripeSet.classList.add("front");
       stripe.classList.add("suit-stripe");
       if (sergeantState.get()) {
-        stripe.classList.add('play-side-bar');
+        stripe.classList.add("play-side-bar");
       } else {
-        stripe.classList.remove('play-side-bar');
-      };           
+        stripe.classList.remove("play-side-bar");
+      }
       img.classList.add("img");
       CardSuit.classList.add("front");
       ImageCircle.classList.add("image-circle");
       stripe1.classList.add("suit-stripe-caption");
       CardContainer.classList.add("front");
-      CardContainer.classList.add("glow-on-hover");      
+      CardContainer.classList.add("glow-on-hover");
       CardSuit.classList.add(`${cardIndex}`);
       ImageCircle.classList.add(`${cardIndex}`);
       stripeSet.classList.add(`${cardIndex}`);
@@ -504,7 +505,10 @@ function privateSize() {
   let styleSh = document.styleSheets;
   let rowLength = 4;
   let sideBarWidth = "";
+  let boxWidth = 0;
+  let starHeight = (ScWidth * 0.86) / 33;
   if (ScWidth >= 1020) {
+    boxWidth = (ScWidth * 0.86) / 4.2;
     sideBarWidth = `${(ScWidth * 0.1) / 2 + (ScWidth * 0.9) / 4.05}px`;
     rowLength = 4;
     styleSh[0].insertRule(
@@ -513,7 +517,7 @@ function privateSize() {
       styleSh[0].rules.length
     );
     styleSh[0].insertRule(
-      `.front { width: ${(ScWidth * 0.86) / 4.2}px;
+      `.front { width: ${boxWidth}px;
               height: ${(ScHeight / 3) * 0.9}px;}`,
       styleSh[0].rules.length
     );
@@ -528,6 +532,15 @@ function privateSize() {
     );
     styleSh[0].insertRule(
       `.start-button {width: ${(ScWidth * 0.86) / 2}px;}`,
+      styleSh[0].rules.length
+    );
+    styleSh[0].insertRule(
+      `.restart-button {width: ${(ScWidth * 0.86) / 20}px;}`,
+      styleSh[0].rules.length
+    );    
+    styleSh[0].insertRule(
+      `.star {width: ${(ScWidth * 0.86) / 33}px;
+              height: ${(ScWidth * 0.86) / 33}px}`,
       styleSh[0].rules.length
     );
   } else if (ScWidth < 1020 && ScWidth >= 600) {
@@ -560,8 +573,129 @@ function privateSize() {
     ScHeight,
     rowLength,
     sideBarWidth,
+    boxWidth,
+    starHeight,
   };
 }
+
+function readAndWriteResults(result) {
+  if (localStorage.getItem("base") === null) {
+    let base = [];
+    for (let i = 1; i < cards.length; i += 1) {
+      cards[i].forEach((a) => base.push({ word: a.word, right: 0, wrong: 0 }));
+    }
+    localStorage.setItem("base", JSON.stringify(base));
+  } else {
+    if (Array.isArray(result)) {
+      let base = JSON.parse(localStorage.getItem("base"));
+      base.forEach((a) =>
+        result.forEach((b) => {
+          if (a.word === b.word) {
+            a.right = a.right + b.right;
+            a.wrong = a.wrong + b.wrong;
+          }
+        })
+      );
+      localStorage.setItem("base", JSON.stringify(base));
+    }
+  }
+  return JSON.parse(localStorage.getItem("base"));
+}
+
+let gameMode = (function () {
+  let arr = [];
+  let card = "";
+  let state = false;
+  let answers = [];
+  let currentCard = undefined;
+  function change(num) {
+    arr = [...num];
+    next();
+  }
+  function changeStatus(val) {
+    state = val;
+  }
+  function next() {
+    if (arr[0] !== undefined) {
+      card = arr[0].word;
+      arr[0].audio.play();
+      currentCard = arr.shift();
+    } else {
+      state = false;      
+      readAndWriteResults(answers);      
+      let wrong = 0;
+      answers.forEach(a => {        
+        wrong += +a.wrong;
+      });
+      let image = '';
+      if (wrong === 0) {
+        image = 'img/success.jpg'
+      }
+      if (wrong > 0) {
+        image = 'img/failure.jpg'
+      }
+      const boxesContainer = document.getElementById('boxes-container');
+      boxesContainer.innerHTML = '';
+        const img = document.createElement('img');        
+        const wrongA = document.createElement('div');        
+        wrongA.classList.add('stats');        
+        wrongA.innerHTML = wrong + 'wrong answers';
+        img.classList.add('endgame');
+        img.setAttribute('src', `${image}`);
+        boxesContainer.appendChild(wrongA);
+        boxesContainer.appendChild(img);
+        setTimeout(() => drawCaptain(), 1000)
+    };
+  }
+  function setAnswer(val) {    
+    let answer = { word: card, right: 0, wrong: 0 };
+    const star = document.createElement('img');
+    const starRow = document.getElementById('stars')
+    if (val === true) {      
+      star.setAttribute('src', 'img/star-win.svg');      
+      answer.right += 1;
+    } else if (val === false) {  
+      star.setAttribute('src', 'img/star.svg');    
+      answer.wrong += 1;
+    };      
+      let stars = Array.from(document.getElementsByClassName('star'));
+      if (stars.length > 32) {        
+        stars.pop();              
+      }   
+      stars.unshift(star);        
+        starRow.innerHTML = '';  
+      star.classList.add('star'); 
+      stars.forEach(a => starRow.appendChild(a));   
+    answers.push(answer);
+  }
+  return {
+    set: function (num) {
+      change(num);
+    },
+    get: function () {
+      return currentCard;
+    },
+    setStatus: function (val) {
+      if (val === true || val === false) {
+        changeStatus(val);
+      }
+    },
+    getStatus: function () {
+      return state;
+    },
+    getCard() {
+      return card;
+    },
+    nextCard() {
+      next();
+    },
+    answer(val) {
+      if (val === true || val === false) {
+        setAnswer(val);
+      }
+    },
+  };
+})();
 
 function majorPaint(category, rowLength) {
   const boxesContainer = document.getElementById("boxes-container");
@@ -582,20 +716,20 @@ function majorPaint(category, rowLength) {
       let button = document.createElement("button");
       let buttonCaption = document.createElement("div");
       let FlipBack = document.createElement("div");
-      let FlipBackBase = document.createElement("div");
-      console.log(category, cardIndex)
+      let FlipBackBase = document.createElement("div");      
       if (!sergeantState.get()) {
         let audio = new Audio(`${cards[1 + category][cardIndex].audioSrc}`);
         Flip.onclick = function () {
           audio.play();
         };
-      }      
+      }
       buttonCaption.innerHTML = "\u27f3";
       FlipBackBase.innerText = cards[1 + category][cardIndex].translation;
       Flip.setAttribute("data", `${cards[0][cardIndex]}`);
       img.setAttribute("src", `${cards[1 + category][cardIndex].image}`);
       stripe1.innerText = cards[1 + category][cardIndex].word;
-      Flip.id = `${cardIndex}`;      
+      Flip.id = `${cardIndex}`;
+      img.classList.add(`-${cards[1 + category][cardIndex].word}`);
       button.onclick = function () {
         FlipInner.classList.add("flipper");
       };
@@ -618,8 +752,8 @@ function majorPaint(category, rowLength) {
         stripeSet.classList.remove("hidden");
       } else {
         stripeSet.classList.add("hidden");
-      };      
-      FlipInner.classList.add('front');
+      }
+      FlipInner.classList.add("front");
       buttonCaption.classList.add("button-caption");
       button.classList.add("flip-button");
       button.classList.add("rotate-scale-down");
@@ -639,6 +773,36 @@ function majorPaint(category, rowLength) {
   }
   let start = document.createElement("button");
   start.classList.add("start-button");
+  start.classList.add("shadow-inset-center");
+  start.onclick = function () {
+    if (gameMode.getStatus()) {
+      gameMode.get().audio.play();
+    } else {
+    start.classList.toggle("start-button");
+    start.classList.add("restart-button");
+    start.innerHTML = "\u27f3";
+    let category = +document.getElementsByClassName("indentation")[0]
+      .classList[0];
+    let numbers = [];
+    for (let i = 0; i < 8; i++) {
+      numbers.push({ index: Math.random() * 8, value: i });
+    }
+    numbers.sort((a, b) => {
+      if (a.index > b.index) {
+        return 1;
+      }
+      if (a.index < b.index) {
+        return -1;
+      }
+    });
+    numbers.forEach((a) => {
+      a.audio = new Audio(`${cards[1 + category][a.value].audioSrc}`);
+      a.word = `${cards[1 + category][a.value].word}`;
+    });
+    gameMode.set(numbers);
+    gameMode.setStatus(true);
+  }
+  };
   let startCaption = document.createElement("div");
   startCaption.innerHTML = "Start game";
   startCaption.classList.add("start-caption");
@@ -647,8 +811,15 @@ function majorPaint(category, rowLength) {
   } else {
     start.classList.add("hidden");
   }
+  const {starHeight} = privateSize();
   start.appendChild(startCaption);
   boxes.push([start]);
+  const stars = document.createElement('div'); 
+  stars.classList.add('row');
+  stars.classList.add('stars-row');  
+  stars.style.height = starHeight + 'px';   
+  stars.id = 'stars';
+  boxesContainer.appendChild(stars);
   boxes.forEach((a, i, arr) => {
     const row = document.createElement("div");
     row.classList.add("row");
@@ -658,22 +829,68 @@ function majorPaint(category, rowLength) {
         row.appendChild(b);
       });
     } else {
-      console.log('start')
       const anotherRow = document.createElement("div");
       anotherRow.classList.add("button-row");
-      anotherRow.classList.add("start-button-row");    
+      anotherRow.classList.add("start-button-row");
       boxesContainer.appendChild(anotherRow);
       a.forEach((b) => {
         anotherRow.appendChild(b);
       });
     }
   });
-
   return boxes;
 }
 
+function showStatistics() {
+  let { boxWidth } = privateSize();
+  const boxesContainer = document.getElementById("boxes-container");
+  boxesContainer.innerHTML = "";
+  let result = readAndWriteResults();
+  console.log(result)
+  result.sort((a, b) => {
+    if (a.wrong < b.wrong) {
+      return 1;
+    }
+    if (a.wrong > b.wrong) {
+      return -1;
+    }
+  });
+  console.log(result)
+  result.forEach((a) => {
+    const row = document.createElement("span");
+    const percentage = document.createElement("div");
+    const right = document.createElement("div");
+    const wrong = document.createElement("div");
+    const stats = document.createElement("div");
+    row.appendChild(stats);
+    row.appendChild(percentage);
+    row.style.height = "2rem";
+    percentage.appendChild(right);
+    percentage.appendChild(wrong);
+    percentage.classList.add("row");
+    percentage.style.width = `${boxWidth}px`;
+    row.classList.add("row");
+    stats.classList.add("stats");
+    right.classList.add("right");
+    let fraction = 0;
+    if (+a.right + +a.wrong !== 0) {
+      fraction = boxWidth / (+a.right + +a.wrong);
+      right.style.width = `${+a.right * +fraction}px`;
+      wrong.style.width = `${+a.wrong * +fraction}px`;
+    } else {
+      console.log("else");
+      fraction = boxWidth / 2;
+      right.style.width = `${fraction}px`;
+      wrong.style.width = `${fraction}px`;
+    }
+    wrong.classList.add("wrong");
+    stats.innerHTML = `${a.word} right: ${a.right} wrong: ${a.wrong}`;
+    boxesContainer.appendChild(row);
+  });
+}
+
 function renderGeneral() {
-  let { ScWidth, ScHeight, rowLength, sideBarWidth } = privateSize();
+  let { rowLength, sideBarWidth } = privateSize();
   const burgerBtn = document.createElement("button");
   const buttonRow = document.createElement("div");
   const burgerStripesColumn = document.createElement("div");
@@ -692,21 +909,21 @@ function renderGeneral() {
   switchBtnWr.classList.add("switch-wrapper");
   playStateBtn.classList.add("slider-button-caption");
   trainStateBtn.classList.add("slider-button-caption");
-  sliderRow.classList.add("slider-row");  
+  sliderRow.classList.add("slider-row");
   if (sergeantState.get()) {
     playStateBtn.classList.remove("hidden");
-    trainStateBtn.classList.add('hidden');
+    trainStateBtn.classList.add("hidden");
   } else {
-    trainStateBtn.classList.remove('hidden');
+    trainStateBtn.classList.remove("hidden");
     playStateBtn.classList.add("hidden");
-  }; 
+  }
   switchBtn.classList.add("switch");
   sliderBtn.classList.add("slider");
   burgerStripesColumn.classList.add("burger-stripes");
   burgerBtn.classList.add("burger-button");
   sideBar.classList.add("side-bar");
   buttonRow.classList.add("row");
-  buttonRow.classList.add("button-row"); 
+  buttonRow.classList.add("button-row");
   sideBarMenu.classList.add("hidden");
   sideBarMenu.classList.add("side-bar-menu");
   switchBtnWr.appendChild(switchBtn);
@@ -763,7 +980,7 @@ function renderGeneral() {
     let start = document.getElementsByClassName("start-button")[0];
     if (start) {
       start.classList.toggle("hidden");
-    }    
+    }
     let arrOfStripes = Array.from(
       document.getElementsByClassName("suit-stripe")
     );
@@ -771,28 +988,27 @@ function renderGeneral() {
     let arrOfSetOfStripes = Array.from(
       document.getElementsByClassName("stripe-set")
     );
-    arrOfSetOfStripes.forEach((a) => a.classList.toggle("hidden"));    
+    arrOfSetOfStripes.forEach((a) => a.classList.toggle("hidden"));
     let arrOfCards = Array.from(document.getElementsByClassName("flip-card"));
     arrOfCards.forEach((a) => a.classList.toggle("wobble-hor-bottom"));
     if (!sergeantState.get()) {
       let category = +document.getElementsByClassName("indentation")[0]
         .classList[0];
-        if (category !== -1) {
-          majorPaint(category, rowLength);
-        }            
-    } else {    
-         console.log('hre')
+      if (category !== -1) {
+        majorPaint(category, rowLength);
+      }
+    } else {
       arrOfCards.forEach((a) => (a.onclick = null));
-    };    
+    }
     setTimeout(() => {
       let arrOfCards = Array.from(document.getElementsByClassName("flip-card"));
       arrOfCards.forEach((a) => a.classList.toggle("wobble-hor-bottom"));
     }, 800);
-  };  
+  };
   let mainWindow = document.createElement("div");
   mainWindow.classList.add("-1");
   mainWindow.classList.add("burger-menu-item");
-  mainWindow.classList.add('indentation');
+  mainWindow.classList.add("indentation");
   mainWindow.id = "-1";
   mainWindow.innerText = "Main Window";
   sideBarMenu.appendChild(mainWindow);
@@ -801,31 +1017,58 @@ function renderGeneral() {
     menuItem.classList.add(i);
     menuItem.classList.add("burger-menu-item");
     menuItem.id = i;
-    menuItem.innerText = a;   
+    menuItem.innerText = a;
     sideBarMenu.appendChild(menuItem);
   });
-  main.onclick = function(e) {
-    let id = +e.target.classList[0];  
-    console.log(id)  
-      if (typeof id === 'number' && id === id) {
-        let arrMenuItems = Array.from(document.getElementsByClassName("burger-menu-item"));      
-        arrMenuItems.forEach((a) => a.classList.remove("indentation"));
-        document.getElementById(id).classList.add("indentation");
-        console.log(document.getElementById(id))
-        switch (id) {
-          case -1:
-            drawCaptain();
-            break;
-          default:
-            majorPaint(id, rowLength);
-            break;
-        };
-      }      
+  let statistics = document.createElement("div");
+  statistics.classList.add("-2");
+  statistics.classList.add("burger-menu-item");
+  statistics.id = "-2";
+  statistics.innerText = "Statistics";
+  sideBarMenu.appendChild(statistics);
+  main.onclick = function (e) {
+    let id = +e.target.classList[0];
+    console.log(id);
+    if (typeof id === "number" && id === id) {
+      let arrMenuItems = Array.from(
+        document.getElementsByClassName("burger-menu-item")
+      );
+      arrMenuItems.forEach((a) => a.classList.remove("indentation"));
+      document.getElementById(id).classList.add("indentation");
+      switch (id) {
+        case -1:
+          drawCaptain();
+          break;
+        case -2:
+          showStatistics();
+          break;
+        default:
+          majorPaint(id, rowLength);
+          break;
+      }
+    } else if (
+      gameMode.getStatus() &&
+      e.target.classList[0].includes(gameMode.getCard())
+    ) {
+      const audio = new Audio('audio/correct.mp3');
+      audio.play();
+      setTimeout(() =>{
+        gameMode.answer(true);
+        gameMode.nextCard();
+      }, 400);     
+    } else if (
+      gameMode.getStatus() &&
+      e.target.classList[0].charAt(0) === "-"
+    ) {
+      const audio = new Audio('audio/error.mp3');
+      audio.play();      
+      gameMode.answer(false);        
+    } 
   };
   stripes.forEach((a) => {
     burgerStripesColumn.appendChild(a);
   });
-};
+}
 
 function chiefCommander() {
   renderGeneral();
