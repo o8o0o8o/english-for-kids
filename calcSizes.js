@@ -51,14 +51,14 @@ export function calcSizes() {
     sideBarWidth = `${(ScWidth * 0.1) / 2 + (ScWidth * 0.9) / 2.05}px`;
     styleSh[0].insertRule(
       `.row { width: ${ScWidth * 0.86}px;
-                height: ${ScHeight / 2}px;
+                height: ${ScHeight / 1.5}px;
                 justify-content: space-between;
                 align-items: unset;}`,
       styleSh[0].rules.length,
     );
     styleSh[0].insertRule(
       `.front { width: ${boxWidth}px;
-                height: ${(ScHeight / 2) * 0.9}px;}`,
+                height: ${(ScHeight / 1.5) * 0.9}px;}`,
       styleSh[0].rules.length,
     );
     styleSh[0].insertRule(
